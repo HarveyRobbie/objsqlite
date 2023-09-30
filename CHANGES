@@ -1,0 +1,25 @@
+
+Changes for December 16, 2009
+
+- [NEW] -[ObjSqliteStatement executeStatement] Allows you to execute multiple SQL statements from
+         one SQL query.
+
+- [RENAMED] Original executeStatement method now has different functionality. The original method
+            can be called with stepAndResetStatement.
+            -[ObjSqliteStatement executeStatement] renamed to
+            -[ObjSqliteStatement stepAndResetStatement]
+
+Changes for December 8, 2009
+
+- [NEW] -[ObjSqliteDB dbExists] Return TRUE if the database file exists.
+
+- [UPDATE] - Thread safety for statements and db objects. You can now use statements
+             across multiple threads.
+
+Changes for November 19, 2009
+
+- [FIXED] Closing a database, removing it, and then attempting to recreate it with the same db
+          object it would fail due to the create statement being deallocated.
+
+- [TEST] Added testCloseDbWithInsertStatement to handle the above fix.
+
